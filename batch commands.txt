@@ -1,0 +1,31 @@
+AGGREGATE FUNCTIONS
+select * from tracer_study;
+
+select name, strand, year from tracer_study;
+
+select * from tracer_study where year > 2020;
+
+select * from tracer_study where college like "UP" or college like "DLSU";
+
+select * from tracer_study where email like "a%";
+
+select * from tracer_study where degree like "%y" and email like "a%";
+
+select avg(rating) from tracer_study;
+
+STATISTICAL FUNCTIONS
+select sdev();
+
+
+-- Dumping structure for table dbti_tracer_study.tracer_study
+CREATE TABLE IF NOT EXISTS `tracer_study` (
+  `Name` varchar(100) NOT NULL,
+  `Strand` varchar(100) DEFAULT NULL,
+  `Year` int(11) DEFAULT NULL,
+  `Educational_Status` varchar(100) DEFAULT NULL,
+  `College` varchar(100) DEFAULT NULL,
+  `Degree` varchar(100) DEFAULT NULL,
+  `Rating` varchar(100) DEFAULT NULL,
+  `Email` varchar(100) NOT NULL,
+  PRIMARY KEY (`Name`,`Email`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

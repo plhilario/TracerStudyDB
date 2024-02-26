@@ -1,0 +1,18 @@
+============STANDARD DEVIATION============
+CREATE FUNCTION `sdev` ()
+RETURNS DOUBLE
+DETERMINISTIC
+NO SQL
+BEGIN
+  DECLARE mean DOUBLE;
+  DECLARE variance DOUBLE;
+
+  SET mean = (SELECT AVG(rating) FROM tracer_study);
+
+  SET variance = (
+    SELECT AVG(POWER(x - mean, 2))
+    FROM tracer_study
+  );
+
+  RETURN sqrt(variance);
+END
