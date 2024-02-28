@@ -1,0 +1,24 @@
+Statistical Computations
+*Percentiles ✅
+*Correlation ✅
+*Chi-Square Test ✅
+*Contingency Table ✅
+
+Percentiles
+*Salary (25th, 50th, and 75th percentiles)
+*College GPA (25th, 50th, and 75th percentiles)
+
+Contingency Tables
+*SHSStrands & GPAs
+*SHSStrands & Salaries
+
+Correlations
+*SHSStrand & CollegeGPA
+*Salary & CollegeGPA
+*Age & Salary
+*Graduation_Year & CollegeGPA
+
+Chi-Square Test for Independence
+*SHSStrand & Degree
+*SHSStrand & Educational Status
+*Educational Status & College

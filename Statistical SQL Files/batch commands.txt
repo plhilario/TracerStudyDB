@@ -1,0 +1,27 @@
+AGGREGATE FUNCTIONS (text and numerical based columns)
+select * from tracer_study;
+select name, shsstrand, graduation_year from tracer_study;
+select * from tracer_study where graduation_year > 2020;
+select * from tracer_study where college like "University of the Philippines" or college like "Ateneo de Manila University";
+select * from tracer_study where degree like "%y" and college like "a%";
+select distinct college from tracer_study;
+
+STATISTICAL FUNCTIONS (text and numerical based columns)
+select avg(x) from tracer_study;
+select stddev(x) from tracer_study;
+select variance(x) from tracer_study;
+select * from tracer_study where salary = (select max(salary) from tracer_study);
+select count(*) from tracer_study where salary is null;
+select count(*) from tracer_study where salary is not null;
+
+-- central tendency of mode	
+select Age, count(*) AS Frequency from tracer_study group by Age order by count(*) desc limit 1;
+
+====================SQL FILES====================
+-- more complex computations need to be stored in a sql file
+
+Contingency Tables.sql
+Correlations.sql
+CSTI Degree & SHSStrand.sql
+CSTI EdStatus & SHSStrand.sql
+CSTI College & EdStatus.sql
