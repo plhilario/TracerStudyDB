@@ -1,24 +1,36 @@
 Statistical Computations
 *Percentiles ✅
+-Salary (25th, 50th, and 75th percentiles)
+-College GPA (25th, 50th, and 75th percentiles)
+
 *Correlation ✅
-*Chi-Square Test ✅
+-SHSStrand & CollegeGPA
+-Salary & CollegeGPA
+-Age & Salary
+-Graduation_Year & CollegeGPA
+
 *Contingency Table ✅
+-SHSStrands & GPAs
+-SHSStrands & Salaries
 
-Percentiles
-*Salary (25th, 50th, and 75th percentiles)
-*College GPA (25th, 50th, and 75th percentiles)
+*Chi-Square Test for Independence ✅
+-SHSStrand & Degree
+-SHSStrand & Educational Status
+-Educational Status & College
 
-Contingency Tables
-*SHSStrands & GPAs
-*SHSStrands & Salaries
+*Regression Analysis ✅
+-Simple Linear Regression (GPA & Salary)
+-Multiple Regression ([Graduation_Year, Age] & Salary)
 
-Correlations
-*SHSStrand & CollegeGPA
-*Salary & CollegeGPA
-*Age & Salary
-*Graduation_Year & CollegeGPA
+-- Difference in continuous and categorical variables across different levels
+*Analysis of Variance (ANOVA)
+-One-Way ANOVA (Degree & CollegeGPA)
+-Two-Way ANOVA ([SHS Strand, Degree] & Age)
 
-Chi-Square Test for Independence
-*SHSStrand & Degree
-*SHSStrand & Educational Status
-*Educational Status & College
+-- comparison of two means between different groups for one outcome variable
+*T-Tests
+-Independent Samples T-Test (CollegeGPA of STEM vs. HUMSS)
+
+*Non-Parametric Tests
+-Mann-Whitney U Test
+-Kruskal-Wallis Test
