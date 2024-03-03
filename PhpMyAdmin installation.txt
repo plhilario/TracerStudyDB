@@ -108,3 +108,12 @@ Run the webserver
 Install MySQL Service
 Install Apache Service
 Run PhpMyAdmin on webserver
+
+===================================== Windows Machine Apache Webserver =====================================
+1. Download Apache
+2. Download PHP
+3. Download MySQL
+4. Test the Apache Service
+
+# Locate the Apache Installation Directory and look for the bin folder
+httpd.exe -k install
