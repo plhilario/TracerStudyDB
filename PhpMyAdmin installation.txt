@@ -1,0 +1,110 @@
+PhpMyAdmin installation
+
+# Make sure that the following have already been installed:
+# 1. WSL2 for Windows
+# 2. Ubuntu
+# 3. MySQL-Client package installed on Ubuntu
+# 4. Windows Firewall allows remote connections
+
+Command Prompt:
+ipconfig
+ping ubuntu_ip_address
+
+Ubuntu:
+sudo ufw allow 3306
+sudo ufw allow 80/tcp
+sudo ufw disable
+sudo ufw status
+mysql -h windows_machine_ip_address -P 3306 -u root@localhost -p
+ip addr show
+ping windows_ip_address
+sudo apt update
+sudo apt install php
+sudo apt install phpmyadmin
+
+#enable the following extensions before running phpmyadmin
+sudo phpenmod mysqli
+sudo phpenmod mbstring
+sudo phpenmod gd
+sudo phpenmod json
+sudo phpenmod openssl
+sudo phpenmod zip
+
+# When you install phpmyadmin, you'll need to configure
+# it to your pre-existing mysql database (by default, it's set to localhost)
+sudo apt update
+sudo apt install php8.1-json php8.1-openssl
+sudo a2enmod php
+
+# Create a Virtual Host Configuration File
+sudo nano /etc/apache2/sites-available/phpmyadmin.conf
+
+# ENTER THE FOLLOWING INTO THE phpmyadmin.conf
+<VirtualHost *:80>
+    ServerName phpmyadmin.example.com
+    DocumentRoot /usr/share/phpmyadmin
+    <Directory /usr/share/phpmyadmin>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+
+sudo a2ensite phpmyadmin.conf
+sudo ln -s /etc/apache2/sites-available/phpmyadmin.conf /etc/apache2/sites-enabled/
+sudo rm /etc/apache2/sites-enabled/000-default.conf
+ls -l /etc/apache2/sites-enabled/	
+sudo systemctl reload apache2
+sudo systemctl restart apache2
+sudo systemctl status apache2
+
+# Check that apache is working by going to localhost on your web browser
+sudo systemctl enable mysql
+sudo systemctl status mysql
+sudo mysql -u root -p
+
+MySQL Command Line:
+GRANT ALL PRIVILEGES ON *.* TO 'plhilario'@'172.18.203.36';
+GRANT ALL PRIVILEGES ON *.* TO '<plhilario>'@'172.18.203.36' IDENTIFIED BY '<Justdoit1>' WITH GRANT OPTION;
+
+===================================== Reset MySQL User-Password =====================================
+sudo chmod +w config.sample.inc.php
+sudo nano config.sample.inc.php
+# set allownopassword option to TRUE
+$cfg['Servers'][$i]['AllowNoPassword'] = true;
+
+# If you were unable to configure phpmyadmin to a database,
+# you'll need to access its configuration file and manually
+# setup the connection to the mysql database
+
+sudo nano /etc/phpmyadmin/config.inc.php
+
+# Do not attempt to configure the file on your windows machine.
+# This is due to the interoperability of Windows and WSL2.
+
+# If you are unable to access the phpmyadmin configuration file,
+# Try this command: sudo dpkg-reconfigure -plow phpmyadmin
+
+# If you attempt to access the package configuration file,
+# follow its instructions until you reach the authenticataion plugin.
+# Check your local mysql authentication plugin by running the following command:
+# SELECT user, host, authentication_string, plugin FROM mysql.user;
+# After doing so, select the appropriate authentication plugin in the phpmyadmin package configuration file.
+
+
+===================================== SSH Service =====================================
+Download SSH Service in Ubuntu for WSL2
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl start ssh
+sudo systemctl enable ssh
+sudo systemctl status ssh
+
+
+===================================== EASYPHP WEBSERVER =====================================
+Download EasyPHP Webserver
+Run the webserver
+Install MySQL Service
+Install Apache Service
+Run PhpMyAdmin on webserver

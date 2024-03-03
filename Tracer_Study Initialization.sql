@@ -10,7 +10,7 @@ CREATE TABLE tracer_study (
     CollegeGPA DECIMAL(3, 2), -- Assuming GPA is in decimal format (e.g., 3.45)
     Job_Search_Duration INT, -- Assuming job search duration is in months
     Work_Hours INT -- Within a week
-); ENGINE = InnoDB;
+);
 
 INSERT INTO tracer_study (Name, Age, SHSStrand, Graduation_Year, Educational_Status, College, Degree, Salary, CollegeGPA, Job_Search_Duration, Work_Hours)
 VALUES
