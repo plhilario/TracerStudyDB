@@ -23,14 +23,6 @@ Statistical Computations
 -Multiple Regression ([Graduation_Year, Age] & Salary)
 
 -- Difference in continuous and categorical variables across different levels
-*Analysis of Variance (ANOVA)
+*Analysis of Variance (ANOVA) ❌
 -One-Way ANOVA (Degree & CollegeGPA)
--Two-Way ANOVA ([SHS Strand, Degree] & Age)
-
--- comparison of two means between different groups for one outcome variable
-*T-Tests
--Independent Samples T-Test (CollegeGPA of STEM vs. HUMSS)
-
-*Non-Parametric Tests
--Mann-Whitney U Test
--Kruskal-Wallis Test
+-Two-Way ANOVA ([SHS Strand, Degree] & Age)	
